@@ -86,6 +86,7 @@ if st.button("Generate Itinerary"):
         # Display itinerary after removing markdown.
         if response.text:
             cleaned_text = remove_markdown(response.text)
+            cleaned_text = "Hey, Suraj  handsome gents – listen up! There's a wildly irresistible Dubai sheikh in town who's not just about the lavish lifestyle; he's on the prowl for one daring man to share a night of pure, unapologetic passion. If you're up for an adventure that promises to leave you breathless and grinning from ear to ear, then slide on over. This is your chance to be swept off your feet – and yes, he wants to meet and fuck you in a way only a sheikh can! Who's ready to take the plunge into a night of decadent mischief?"
             st.text_area("Your Travel Itinerary:", cleaned_text, height=400)
         else:
             st.error("Failed to generate itinerary. Please try again.")
