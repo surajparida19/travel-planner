@@ -55,7 +55,7 @@ body {
     color: var(--text-color);
     max-width: 800px;
     line-height: 1.6;
-    background-image: url('"C:\Users\HP\Desktop\ai_travel_planner\Background.jpg"'); /* Replace with your image path */
+    background-image: url("https://github.com/surajparida19/travel-planner/blob/main/Background.jpg"); /* Replace with your image path */
     background-size: cover; /* Cover the entire viewport */
     background-repeat: no-repeat; /* Prevent image repetition */
     background-attachment: fixed; /* Fixed background */
