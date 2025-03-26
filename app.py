@@ -1,11 +1,3 @@
-# import streamlit as st
-# import google.generativeai as genai
-# import re  # Import the regular expression module
-
-# # Set up Gemini API key
-
-# genai.configure(api_key=GEMINI_API_KEY)
-
 import streamlit as st
 import google.generativeai as genai
 import re  # Import the regular expression module
@@ -14,27 +6,25 @@ import re  # Import the regular expression module
 GEMINI_API_KEY = "AIzaSyBvLxH_CL8nm17Ake-Cr0KMdC8FFYoKmiU"  # Replace with your actual API key
 genai.configure(api_key=GEMINI_API_KEY)
 
-# Function to remove Markdown
+# Function to remove Markdown formatting
 def remove_markdown(text):
     """Removes Markdown bold (**) and other formatting from text."""
     text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)  # Remove bold
-    text = re.sub(r'\*(.*?)\*', r'\1', text)      # Remove italics
-    text = re.sub(r'_([^_]*)_', r'\1', text)        # Remove underscores for italics
+    text = re.sub(r'\*(.*?)\*', r'\1', text)        # Remove italics
+    text = re.sub(r'_([^_]*)_', r'\1', text)         # Remove underscores for italics
     return text
 
 # Background image URL
 background_url = "https://raw.githubusercontent.com/surajparida19/travel-planner/main/Background.jpg"
 
-# CSS Styles
+# CSS Styles (targeting the Streamlit app container for the background image)
 css = f"""
 <style>
-    .main {{
+    .stApp {{
         background-image: url("{background_url}");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        height: 100vh;
-        padding: 20px;
     }}
 
     .stButton>button {{
@@ -91,7 +81,6 @@ if st.button("Generate Itinerary"):
 
         # Use the correct Gemini model
         model = genai.GenerativeModel("models/gemini-1.5-flash-001")
-
         response = model.generate_content(prompt)
 
         # Display itinerary after removing markdown.
@@ -100,7 +89,5 @@ if st.button("Generate Itinerary"):
             st.text_area("Your Travel Itinerary:", cleaned_text, height=400)
         else:
             st.error("Failed to generate itinerary. Please try again.")
-
     else:
         st.error("Please fill in all required details.")
-)
