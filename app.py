@@ -16,6 +16,7 @@ def remove_markdown(text):
 
 # Background image URL
 background_url = "https://raw.githubusercontent.com/surajparida19/travel-planner/main/Background.jpg"
+background_url = "https://raw.githubusercontent.com/surajparida19/travel-planner/main/Lake Bled, Slovenia.jpeg"
 
 # CSS Styles (targeting the Streamlit app container for the background image)
 css = f"""
