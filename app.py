@@ -55,6 +55,15 @@ body {
     color: var(--text-color);
     max-width: 800px;
     line-height: 1.6;
+     background-image: url('background.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-attachment: fixed; /* Fixed background */
+    color: white; /* Adjust text color for readability */
+}
+
+#itinerary {
+    background-color: rgba(255, 255, 255, 0.8)
     background-color: #f5f5f5; /* Light background */
     color: #333; /* Darker text for readability */
 }
