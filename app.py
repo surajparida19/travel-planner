@@ -30,7 +30,7 @@ css = f"""
     }}
 
     .stButton>button {{
-        background-color: #28a745;
+        background-color: #106EBE;
         color: white;
         padding: 10px 20px;
         border-radius: 8px;
