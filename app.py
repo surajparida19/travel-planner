@@ -23,7 +23,7 @@ background_url = ""
 css = f"""
 <style>
     .stApp {{
-        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        background: linear-gradient(to right, #3a7bd5, #3a6073);
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
