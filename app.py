@@ -1,9 +1,19 @@
 import streamlit as st
-import google.generativeai as genai  # Import Gemini API
+import google.generativeai as genai
+import re  # Import the regular expression module
 
 # Set up Gemini API key
-GEMINI_API_KEY = "AIzaSyBvLxH_CL8nm17Ake-Cr0KMdC8FFYoKmiU"  # Replace with your actual API key
+GEMINI_API_KEY = "AIzaSyBvLxH_CL8nm17Ake-Cr0KMdC8FFYoKmiU"
 genai.configure(api_key=GEMINI_API_KEY)
+
+# Function to remove Markdown
+def remove_markdown(text):
+    """Removes Markdown bold (**) and other formatting from text."""
+    text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)  # Remove bold
+    text = re.sub(r'\*(.*?)\*', r'\1', text)      # Remove italics
+    text = re.sub(r'_([^_]*)_', r'\1', text)      # Remove underscores for italics
+    # Add other Markdown removal patterns as needed
+    return text
 
 # App Title
 st.title("✈️ AI Travel Planner")
@@ -33,9 +43,10 @@ if st.button("Generate Itinerary"):
 
         response = model.generate_content(prompt)
 
-        # Display itinerary
+        # Display itinerary after removing markdown.
         if response.text:
-            st.text_area("Your Travel Itinerary:", response.text, height=400)
+            cleaned_text = remove_markdown(response.text)
+            st.text_area("Your Travel Itinerary:", cleaned_text, height=400)
         else:
             st.error("Failed to generate itinerary. Please try again.")
 
