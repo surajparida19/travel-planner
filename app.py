@@ -55,6 +55,20 @@ body {
     color: var(--text-color);
     max-width: 800px;
     line-height: 1.6;
+    background-color: #f5f5f5; /* Light background */
+    color: #333; /* Darker text for readability */
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition */
+}
+
+button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+#itinerary {
+    background-color: white;
 }
 
 header {
