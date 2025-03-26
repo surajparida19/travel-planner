@@ -2,8 +2,8 @@ import streamlit as st
 import google.generativeai as genai
 import re
 
-# Set up Gemini API key
-GEMINI_API_KEY = st.secrets["AIzaSyBvLxH_CL8nm17Ake-Cr0KMdC8FFYoKmiU"]
+# Set up Gemini API key (using the correct key name)
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"] # changed from the API key to "GEMINI_API_KEY"
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Function to remove Markdown
