@@ -2,8 +2,12 @@ import streamlit as st
 import google.generativeai as genai  # Import Gemini API
 
 # Set up Gemini API key
-GEMINI_API_KEY = "AIzaSyBvLxH_CL8nm17Ake-Cr0KMdC8FFYoKmiU"  # Replace with your actual API key
-genai.configure(api_key=GEMINI_API_KEY)
+import os
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")  # ✅ Secure way to access API key
+if not GEMINI_API_KEY:
+    st.error("API Key is missing! Please set GEMINI_API_KEY in environment variables.")
+    st.stop()
+
 
 # App Title
 st.title("✈️ AI Travel Planner")
