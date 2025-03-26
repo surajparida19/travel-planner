@@ -30,7 +30,7 @@ css = f"""
     }}
 
     .stButton>button {{
-        background-color: #E9F1FA;
+        background-color: #218838;
         color: white;
         padding: 10px 20px;
         border-radius: 8px;
@@ -40,7 +40,7 @@ css = f"""
     }}
 
     .stButton>button:hover {{
-        background-color: #218838;
+        background-color: #E9F1FA;
     }}
 
     .stTextInput>div>input {{
