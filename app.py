@@ -23,7 +23,7 @@ background_url = ""
 css = f"""
 <style>
     .stApp {{
-        background-color: #106EBE;
+        background-color: #0FFCBE;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
